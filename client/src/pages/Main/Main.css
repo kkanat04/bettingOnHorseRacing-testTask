@@ -1,0 +1,71 @@
+.horses {
+    background-color: rgba(54, 87, 130, 0.589);
+    padding: 15px 13px 15px 13px;
+    border: 1px solid;
+    backdrop-filter: blur(5px);
+    color: #fff;
+}
+.main__horses {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+}
+.active {
+    background-color: green;
+}
+.main__horse_contain {
+    width: 80%;
+}
+.main {
+    display: flex;
+    padding-top: 20%;
+    align-items: center;
+    flex-direction: column;
+    height: 94vh;
+    background-image: url('https://bethap.com/uploads/1xbet%20-%20%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8/%D0%94%D1%80%D1%83%D0%B3%D0%B8/1xBet%20horse%20racing/1xbet-horse-racin-en-1.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__inp {
+    padding: 13px;
+    text-align: center;
+    border: 2px solid #fff;
+    outline: 0;
+    background-color: rgb(54, 87, 130);
+    color: gold;
+    border-radius: 7px;
+    font-size: 23px;
+}
+
+.main__bid {
+    color: #fff;
+    font-size: 30px;
+}
+.chooseHorse {
+    color: #fff;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+.chooseHorseSpan {
+    color: red;
+    font-weight: 800;
+}
+.main__bet {
+    padding: 13px 25px 13px 25px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+.main__bet:disabled {
+    background-color: gray;
+    color: #fff;
+    cursor: not-allowed;
+}
