@@ -2,20 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { IAllHorse } from '../../interface/IAllHorse';
 import { SET_ALL_HORSE, SET_MONEY, SET_WIN_NAME } from '../../modules/reducers/horseSlice';
-import Lottie from 'react-lottie';
+import Lottie from "lottie-react";
 import { socket } from '../../socket';
 import KeepMountedModal from '../KeepMountedModal/KeepMountedModal';
 import Horse from '../../Horse.json'
 import './AllHorse.css'
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: Horse,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice'
-  }
-};
 
 function AllHorse() {
   const { allHorse, betHorse, winName, money, betMoneyValue } = useAppSelector(state => state.horseSlice)
@@ -41,7 +32,7 @@ function AllHorse() {
         }
       })
     })
-  setLeader((allHorse?.reduce((acc, curr) => acc.distance > curr.distance ? acc : curr)))
+    setLeader((allHorse?.reduce((acc, curr) => acc.distance > curr.distance ? acc : curr)))
 
   }, [allHorse, betHorse, betMoneyValue, dispatch, money])
 
@@ -51,12 +42,14 @@ function AllHorse() {
       <div className='allHorseContainer'>
         {allHorse ? allHorse.map((el, i) => {
           return (
-            <div style={{ marginLeft: `${el.distance / 10 + 1}%`, transition: '1s' }}  key={i}>
+            <div style={{ marginLeft: `${el.distance / 10 + 1}%`, transition: '1s' }} key={i}>
               <p>{`${el.name} ${el.name === leader?.name ? '👑' : ''}`}</p>
-              <Lottie style={{margin: 0}} options={defaultOptions}
-                height={100}
-                width={100}
-              />
+              <div style={{ width: 100, height: 100 }}>
+                <Lottie
+                  loop
+                  animationData={Horse}
+                />
+              </div>
             </div>
           )
         }) : <p>Loading...</p>}
